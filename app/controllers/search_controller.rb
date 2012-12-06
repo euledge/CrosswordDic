@@ -13,5 +13,6 @@ class SearchController < ApplicationController
     keys << "#{query_word.size+1}:＄"
 
     @words=REDIS.sinter(*keys)
+    @words.map!{|value| ActiveSupport::JSON.decode(value)}
   end
 end

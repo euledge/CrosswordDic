@@ -2,4 +2,9 @@
 %table
   - @words.each do |word|
     %tr
-      %td= word
+      %th 読み:
+      %td= word['yomi']
+      %th 単語:
+      %td
+        = link_to(word['word'], 'http://ja.wikipedia.org/wiki/' + word['word'])
+
