@@ -1,4 +1,4 @@
-%h1 検索結果
+%h1= "#{@query_word} の 検索結果"
 %table
   - @words.each do |word|
     %tr
@@ -6,5 +6,4 @@
       %td= word['yomi']
       %th 単語:
       %td
-        = link_to(word['word'], 'http://ja.wikipedia.org/wiki/' + word['word'])
-
+        = link_to(word['word'], 'http://dic.yahoo.co.jp/dsearch?dtype=0&p=' + word['word'])
