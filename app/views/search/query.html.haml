@@ -1,4 +1,6 @@
 %h1= "#{@query_word} の 検索結果"
+
+= @redis_instance
 %table
   - @words.each do |word|
     %tr

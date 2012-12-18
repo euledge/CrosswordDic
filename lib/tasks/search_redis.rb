@@ -7,7 +7,12 @@ unless ARGV.length==1 then
   exit 1
 end
 
-redis = Redis.new
+if Rails.env == 'production'
+  redis = Redis.new(host: "#{ENV['DOTCLOUD_DATA_REDIS_HOST']}" , port: "#{ENV['DOTCLOUD_DATA_REDIS_PORT']}")
+  redis.AUTH("#{ENV['DOTCLOUD_DATA_REDIS_PASSWORD']}")
+else
+  redis = Redis.new
+end
 redis.ping
 
 word=ARGV[0]

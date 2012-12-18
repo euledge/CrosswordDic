@@ -1,0 +1,4 @@
+www:
+  type: ruby
+data:
+  type: redis

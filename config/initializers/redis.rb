@@ -1,1 +1,3 @@
-REDIS = Redis.new
+#coding:utf-8
+require 'redis'
+
