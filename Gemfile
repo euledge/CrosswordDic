@@ -1,6 +1,7 @@
 # coding: utf-8
-source :rubygems
+source "http://rubygems.org"
 
+#sinatra関連
 gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-contrib', require: 'sinatra/contrib/all'
 
@@ -9,8 +10,10 @@ gem 'shotgun'
 gem 'haml'
 gem 'sass'
 gem 'coffee-script'
-gem 'activesupport', require: 'activesupport/all'
-gem 'activerecord'
-gem 'sinatra-activerecord', require: 'sinatra/activerecord'
+
+# データベース
 gem 'sqlite3'
-gem "settingslogic"
+gem 'activesupport'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'rake'

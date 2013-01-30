@@ -1,0 +1,10 @@
+%h1 #{@query_word} の検索結果
+
+%table
+  - @results.each do |word|
+    %tr
+      %th よみ：
+      %td= word['yomi']
+      %th 単語：
+      %td= word['word']
+/        = link_to(word['word'],  'http://dic.yahoo.co.jp/dsearch?dtype=0&p=' +word['word'])
