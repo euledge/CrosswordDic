@@ -5,11 +5,8 @@ source "http://rubygems.org"
 gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-contrib', require: 'sinatra/contrib/all'
 
-gem 'shotgun'
-
 gem 'haml'
 gem 'sass'
-gem 'coffee-script'
 
 # データベース
 gem 'sqlite3'
@@ -17,3 +14,8 @@ gem 'activesupport'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'rake'
+
+# 開発時のみ有効
+group :test,  :development do
+ gem 'shotgun'
+end
