@@ -27,13 +27,20 @@ end
 # Controller
 class App < Sinatra::Base
 
+  #
   get '/' do
+  end
+
+  # 静的ファイル
+  get '/search/js/:file.:ext' do |file, ext|
+    content_type ext
+    send_file "/search/js/#{file}.#{ext}"
   end
 
   # 静的ファイル
   get '/search/:file.:ext' do |file, ext|
     content_type ext
-    send_file "/search/images/#{file}.#{ext}"
+    send_file "/search/img/#{file}.#{ext}"
   end
 
   # JSONの時

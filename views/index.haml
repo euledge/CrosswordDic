@@ -1,7 +1,12 @@
-%img.bg{:alt => "clossword", :src => "images/2329007153_c070423a15_b.jpg"}
+%img.bg{:alt => "Crossword Anyone?",  :src => "http://farm3.staticflickr.com/2208/2329007153_6b0d25b5e3_o.jpg"}
 #container
-  %h1 #{@query_word} の検索結果
+  .row
+    .span12
+      %form.form-inline{ :method => "get", :action => "search"}
+        %input.span5{ :name => "loc", :type => "text", :placeholder => "Location: City,  State,  Zip"}
+        %button.btn.btn-primary{ :type => "submit" }
 
+  #header query_word の検索結果
   %table
     - @results.each do |word|
       %tr
